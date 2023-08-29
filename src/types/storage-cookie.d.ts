@@ -9,7 +9,7 @@ declare module 'types/storage-cookie' {
 
   export interface ICookieData {
     value: string
-    expires: number
+    expires?: string
     domain?: string
     SameSite?: string
     path?: string

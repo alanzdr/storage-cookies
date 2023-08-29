@@ -8,22 +8,29 @@ module.exports = () => {
 
   const env = {
     development: {
-      PATH: 'public'
+      PATH: 'public',
+      FILENAME: 'storage-cookie.js'
     },
     production: {
-      PATH: 'dist'
+      PATH: 'dist',
+      FILENAME: 'storage-cookie.min.js'
     }
   }
 
   return {
     entry: './src/index.ts',
     mode,
+    target: ['web', 'es5'],
     module: {
       rules: [
         {
           test: /\.tsx?$/,
-          use: 'ts-loader',
           exclude: /node_modules/,
+          use: [
+            {
+              loader: 'ts-loader'
+            }
+          ],
         },
       ],
     },
@@ -40,7 +47,7 @@ module.exports = () => {
       extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-      filename: 'storage-cookie.min.js',
+      filename: env[mode].FILENAME,
       path: path.resolve(__dirname, env[mode].PATH),
     },
     devServer: {
