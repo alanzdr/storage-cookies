@@ -27,6 +27,7 @@ function StorageCookie (storageKey: string) : IStorageCookie {
 
     return cookie
   }
+  
   const getValue = (name: string): string | null => {
     const cookie = get(name)
     return cookie ? cookie.value : null
