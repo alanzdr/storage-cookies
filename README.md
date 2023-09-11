@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".github/logo.png" width="200" alt="Feirão Vale Tudo Fiat Duna">
+  <img src=".github/logo.png" width="200" alt="Storage Cookies logo">
 </p>
 
 <h1 align="center">Storage Cookies</h1>
